@@ -3,7 +3,7 @@
 // Author      : <name> & <studentID>
 // Description : <of the file contents>
 
-public class Assignment03 {
+public class Assignment3 {
 	public static void main(String[] args) {
 		// declare and instantiate a Scanner
 

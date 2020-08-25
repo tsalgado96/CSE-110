@@ -4,7 +4,7 @@
 // Description : <of the file contents>
 import java.util.Scanner;
 
-public class Assignment01 {
+public class Assignment1 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
@@ -25,11 +25,6 @@ public class Assignment01 {
 
 		System.out.print("Number of children         : ");
 		numChild = input.nextInt();
-
-		// Line to separate input/output.
-		System.out.println();
-		System.out.println("-------------------------------------------------");
-		System.out.println();
 
 		// Calculates total number of slices.
 		totalNumSlices = numPizza * numSlices;
