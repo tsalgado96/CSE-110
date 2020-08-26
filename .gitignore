@@ -1,5 +1,6 @@
 .idea/
 .DS_Store
+/out
 CSE 110.iml
 Assignment1/Assignment1.iml
 Assignment1/.DS_Store
@@ -22,3 +23,6 @@ Lab3/src/.DS_Store
 Lab3_1/Lab3_1.iml
 Lab3_1/.DS_Store
 Lab3_1/src/.DS_Store
+Lab4/Lab4.iml
+Lab4/.DS_Store
+Lab4/src/.DS_Store
