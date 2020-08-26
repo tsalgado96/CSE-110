@@ -1,7 +1,7 @@
-// CSE 110     : <Class #> / <meeting days and times>
+// CSE 110     : CSE 110 / Online
 // Assignment  : Assignment 1
 // Author      : Teodoro Salgado 1220358243
-// Description : <of the file contents>
+// Description : The user inputs values and the program outputs corresponding values based on a set of rules.
 import java.util.Scanner;
 
 public class Assignment1 {
