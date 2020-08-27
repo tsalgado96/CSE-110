@@ -1,23 +1,31 @@
-// CSE 110     : <Class #> / <meeting days and times>
-// Assignment  : <assignment #>
-// Author      : <name> & <studentID>
-// Description : <of the file contents>
+// CSE 110     : CSE 110 / Online
+// Assignment  : Assignment 1
+// Author      : Teodoro Salgado 1220358243
+// Description :
+import java.util.Scanner;
 
 public class Assignment3 {
 	public static void main(String[] args) {
-		// declare and instantiate a Scanner
+		// Declare and instantiate a Scanner
+		Scanner input = new Scanner(System.in);
+
+		// Declare and initialize variables
+		int currentShares, purchasePrice, marketPrice, availableFunds;
+
+		// Prompt for and collect inputs
+		System.out.print("Current Shares  : ");
+		currentShares = input.nextInt();
+		System.out.print("Purchase Price  : ");
+		purchasePrice = input.nextInt();
+		System.out.print("Market Price    : ");
+		marketPrice = input.nextInt();
+		System.out.print("Available Funds : ");
+		availableFunds = input.nextInt();
+
+		// Compute required values
 
 
-		// declare and initialize variables
-
-
-		// prompt for and collect inputs
-
-
-		// compute required values
-
-
-		// display required outputs
+		// Display required outputs
 
 	}
 }
