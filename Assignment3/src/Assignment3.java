@@ -11,6 +11,7 @@ public class Assignment3 {
 
 		// Declare and initialize variables
 		int currentShares, purchasePrice, marketPrice, availableFunds;
+		double totalBuyCost;
 
 		// Prompt for and collect inputs
 		System.out.print("Current Shares  : ");
@@ -23,7 +24,7 @@ public class Assignment3 {
 		availableFunds = input.nextInt();
 
 		// Compute required values
-
+		totalBuyCost = 10 + marketPrice *
 
 		// Display required outputs
 

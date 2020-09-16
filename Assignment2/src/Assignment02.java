@@ -5,7 +5,7 @@
 
 import java.util.Scanner;
 
-public class Assignment2 {
+public class Assignment02 {
 	public static void main(String[] args) {
 
 		// Declares variables for user inputs.
