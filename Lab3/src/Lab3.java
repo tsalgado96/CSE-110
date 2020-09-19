@@ -1,7 +1,7 @@
 /*-------------------------------------------------------------
 // AUTHOR: Teodoro Salgado
 // FILENAME: Lab3.java
-// SPECIFICATION: your own description of the program.
+// SPECIFICATION: Computes the users weighted average.
 // FOR: CSE 110 - Lab #3
 // TIME SPENT: 3 Hours
 //-----------------------------------------------------------*/
