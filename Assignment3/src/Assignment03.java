@@ -4,7 +4,7 @@
 // Description : Program takes user inputs of share prices and determines whether to sell, buy, or hold
 import java.util.Scanner;
 
-public class Assignment3 {
+public class Assignment03 {
 	public static void main(String[] args) {
 		/* DECLARE AND INSTANTIATE A SCANNER */
 		Scanner input = new Scanner(System.in);
