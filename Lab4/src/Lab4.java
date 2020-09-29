@@ -1,9 +1,9 @@
 /*-------------------------------------------------------------
 // AUTHOR: Teodoro Salgado
 // FILENAME: Lab4.java
-// SPECIFICATION: your own description of the program.
+// SPECIFICATION: Program makes different calculations based on the users inputs
 // FOR: CSE 110 - Lab #4
-// TIME SPENT:
+// TIME SPENT: 2.5 hours
 //-----------------------------------------------------------*/
 import java.util.Scanner;
 
