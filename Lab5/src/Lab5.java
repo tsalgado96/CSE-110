@@ -1,9 +1,9 @@
 /*-------------------------------------------------------------
-// AUTHOR:
-// FILENAME:
-// SPECIFICATION:
-// FOR:
-// TIME SPENT:
+// AUTHOR: Teodoro Salgado
+// FILENAME: Lab5.java
+// SPECIFICATION: Program builds a row/pyramid/diamond with characters
+// FOR: CSE 110 - Lab #5
+// TIME SPENT: 1 Hour
 //-----------------------------------------------------------*/
 
 import java.util.Scanner;
@@ -35,9 +35,7 @@ public class Lab5 {
                     scanner.nextLine();  // Flush junk newline symbols
 
                     System.out.println();
-                    System.out.println(buildRow(
-                            SIDE_SYMB, sideWidth, MID_SYMB, midWidth
-                    ));
+                    System.out.println(buildRow(SIDE_SYMB, sideWidth, MID_SYMB, midWidth));
 
                     break;
                 case 'p':
@@ -85,8 +83,7 @@ public class Lab5 {
      * @param midWidth  Number of symbols in the middle
      * @return          A String of a row of the designed pattern
      */
-    private static String buildRow(
-            char sideSymb, int sideWidth, char midSymb, int midWidth) {
+    private static String buildRow(char sideSymb, int sideWidth, char midSymb, int midWidth) {
         String result = "";
 
         for (int i = 0; i < sideWidth; i++) {
@@ -94,6 +91,9 @@ public class Lab5 {
         }
         for (int i = 0; i < midWidth; i++) {
             result += midSymb;
+        }
+        for (int i = 0; i < sideWidth; i++) {
+            result += sideSymb;
         }
 
         return result;
@@ -123,8 +123,7 @@ public class Lab5 {
      * @param  numSymbols The number of symbols on the lowest layer
      * @return            A String of the pyramid pattern.
      */
-    private static String buildPyramid(
-            char sideSymb, char midSymb, int numSymbols) {
+    private static String buildPyramid(char sideSymb, char midSymb, int numSymbols) {
         String result = "";
 
         int totalSymbOneRow = numSymbols;
@@ -147,13 +146,26 @@ public class Lab5 {
      * @param  numSymbols The height of a pyramid
      * @return           A String of the inverted diamond pattern.
      */
-    private static String buildDiamond(
-            char sideSymb, char midSymb, int numSymbols) {
-
+    private static String buildDiamond(char sideSymb, char midSymb, int numSymbols) {
         String result = "";
+        if (numSymbols % 2 == 0)
+            numSymbols -= 1;
 
         // YOUR CODE HERE
         // -->
+        int totalSymbOneRow = numSymbols;
+
+        for (int numStars = 1; numStars <= numSymbols - 2; numStars += 2) {
+            int numDashed = (totalSymbOneRow - numStars) / 2;
+            String row = buildRow(sideSymb, numDashed, midSymb, numStars);
+            result += row + "\n";
+        }
+
+        for (int numStars = numSymbols; numStars > 0; numStars-=2) {
+            int numDashed = (totalSymbOneRow - numStars) / 2;
+            String row = buildRow(sideSymb, numDashed, midSymb, numStars);
+            result += row + "\n";
+        }
 
         return result;
     }
