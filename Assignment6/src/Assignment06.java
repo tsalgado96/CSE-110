@@ -36,6 +36,17 @@ public class Assignment06 {
         int[] myArray8 = {1, 22, 333, 400, 5005, 9};
         for (int item: removeAtIndex(myArray8, 3))
             System.out.print(item + " ");
+        System.out.println();
+        // 9)
+        int[] myArray9 = {1, 22, 333, 400, 9};
+        for (int item: insertAtIndex(myArray9, 2, 777))
+            System.out.print(item + " ");
+        System.out.println();
+        // 10)
+        int[] myArray10 = {22, 5005, 400, 333, 1, 9};
+        System.out.println(isSorted(myArray10));
+        int[] myArray11 = {1, 2, 3, 4, 5, 6};
+        System.out.println(isSorted(myArray11));
 
     }
 
@@ -148,13 +159,34 @@ public class Assignment06 {
     //   This method create and return a new array with all of the values
     //   in the argument array and including the third argument value
     //   inserted at the index specified by the second argument value.
-
+    public static int[] insertAtIndex(int[] arr, int index, int value) {
+        int[] rt = new int[arr.length + 1];
+        for (int i = 0, j = 0; i < arr.length; i++, j++){
+            if (i == index) {
+                rt[j++] = value;
+            }
+            rt[j] = arr[i];
+        }
+        return rt;
+    }
 
     //10) Write a public static method named isSorted,
     //    that takes an Array of int as an argument.
     //    This method should return the boolean value true
     //    if all the element values in the array are in ascending order;
     //    otherwise the method should return the boolean value false.
+    public static boolean isSorted(int[] arr) {
+        boolean rt = true;
+        for (int i = 0; i < arr.length; i++){
+            if (i == arr.length - 1)
+                break;
+            if (arr[i] > arr[i+1]) {
+                rt = false;
+                break;
+            }
+        }
+        return rt;
+    }
 
 
 }
