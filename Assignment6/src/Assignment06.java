@@ -1,7 +1,7 @@
-// CSE 110     : <Class #> / <meeting days and times>
-// Assignment  : <assignment #>
-// Author      : <name> & <studentID>
-// Description : <of the file contents>
+// CSE 110     : CSE 110 / Online
+// Assignment  : Assignment 6
+// Author      : Teodoro Salgado 1220358243
+// Description : Practice manipulating arrays and writing methods that take arrays as parameters
 
 public class Assignment06 {
 
@@ -56,6 +56,7 @@ public class Assignment06 {
     //   a list of the values in the array, each separated by the value of the second argument.
     public static void printArray(int[] arr, String str) {
         for (int i = 0; i < arr.length; i++){
+            // Does not add the separating value if it's the last item in the array
             if(i == arr.length - 1) {
                 System.out.print(arr[i]);
             }
@@ -86,8 +87,10 @@ public class Assignment06 {
     //    that takes an Array of int as an argument and creates and returns
     //    a new array with all of the values in the argument array except the first value.
     public static int[] getAllButFirst(int[] arr) {
+        // Declares a new array with length one less than the argument array
         int[] rt = new int[arr.length - 1];
-        for(int i = 1; i < arr.length; i ++)
+        // Starts the loop at index 1 to skip over the first element
+        for (int i = 1; i < arr.length; i ++)
             rt[i - 1] = arr[i];
         return rt;
     }
@@ -96,9 +99,12 @@ public class Assignment06 {
     //    that takes an Array of int as an argument and returns
     //    the index of the least value in the array.
     public static int getIndexOfMin(int[] arr) {
+        // min is initialized to the first element of the array
         int min = arr[0];
         int index = 0;
         for (int i = 1; i < arr.length; i++){
+            // If the element at index i is less than the current min it will replace it
+            // Keeps track of the index of the min
             if (arr[i] < min){
                 min = arr[i];
                 index = i;
@@ -111,9 +117,12 @@ public class Assignment06 {
     //    that takes an Array of int as an argument and returns
     //    the index of the largest value in the array.
     public static int getIndexOfMax(int[] arr) {
+        // max is initialized to the first element of the array
         int max = arr[0];
         int index = 0;
-        for (int i = 1; i< arr.length; i++){
+        for (int i = 1; i < arr.length; i++){
+            // If the element at index i is greater than the current max it will replace it
+            // Keeps track of the index of the max
             if (arr[i] > max){
                 max = arr[i];
                 index = i;
@@ -129,11 +138,14 @@ public class Assignment06 {
     //    This method will swap the values at the two given index arguments
     //    in the array, and return a reference to the array.
     public static int[] swapByIndex(int[] arr, int a, int b) {
+        // Declares a new variable rt that is a reference to the array
+        int[] rt = arr;
         int x = arr[a];
         int y = arr[b];
-        arr[a] = y;
-        arr[b] = x;
-        return arr;
+        rt[a] = y;
+        rt[b] = x;
+        // Returns the reference
+        return rt;
     }
 
 
@@ -143,8 +155,12 @@ public class Assignment06 {
     //  a new array with all of the values in the argument array
     //  except the value at the argument index.
     public static int[] removeAtIndex(int[] arr, int index) {
+        // Declares new array with length one less than the argument array
         int[] rt = new int[arr.length - 1];
+        // i is the index counter for arr
+        // j is the index counter for rt
         for (int i = 0, j = 0; i < arr.length; i++){
+            // j will not increment when i is equal to the argument index, thus not going out of bounds
             if (i != index) {
                 rt[j++] = arr[i];
             }
@@ -160,8 +176,12 @@ public class Assignment06 {
     //   in the argument array and including the third argument value
     //   inserted at the index specified by the second argument value.
     public static int[] insertAtIndex(int[] arr, int index, int value) {
+        // Declares new array with length one more than the argument array
         int[] rt = new int[arr.length + 1];
+        // i is the index counter for arr
+        // j is the index counter for rt
         for (int i = 0, j = 0; i < arr.length; i++, j++){
+            // j will increment twice in the loop cycle when i is equal to the argument index
             if (i == index) {
                 rt[j++] = value;
             }
@@ -176,17 +196,17 @@ public class Assignment06 {
     //    if all the element values in the array are in ascending order;
     //    otherwise the method should return the boolean value false.
     public static boolean isSorted(int[] arr) {
-        boolean rt = true;
         for (int i = 0; i < arr.length; i++){
+            // Break out of the loop if index is on the last element of the array to avoid out of bounds
             if (i == arr.length - 1)
                 break;
+            // Compares index i with i+1 and returns false if the value at index i is greater than i+1
             if (arr[i] > arr[i+1]) {
-                rt = false;
-                break;
+                return false;
             }
         }
-        return rt;
+        // Default returns true if for loops completes without returning
+        // Means that the elements in the array are in ascending order
+        return true;
     }
-
-
 }
