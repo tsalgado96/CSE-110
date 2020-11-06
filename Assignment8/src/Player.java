@@ -1,7 +1,7 @@
-// CSE 110     : <Class #> / <meeting days and times>
-// Assignment  : <assignment #>
-// Author      : <name> & <studentID>
-// Description : <of the file contents>
+// CSE 110     : CSE 110 / Online
+// Assignment  : Assignment 8
+// Author      : Teodoro Salgado 1220358243
+// Description : Instantiates a Player object with a name, an attack stat, and a block stat
 
 public class Player {
     private String name;
@@ -39,6 +39,7 @@ public class Player {
     }
 
     public void printPlayerInfo(){
-
+        //System.out.println(this.name + " (attack = " + this.attackStat + ", block = " + this.blockStat + ")");
+        System.out.printf("%s (attack = %.2f, block = %.2f)\n", this.name, this.attackStat, this.blockStat);
     }
 }
