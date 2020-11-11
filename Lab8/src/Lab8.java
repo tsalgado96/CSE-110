@@ -1,18 +1,16 @@
 /*-------------------------------------------------------------
 //AUTHOR: Teodoro Salgado
 //FILENAME: Lab8.java
-//SPECIFICATION:
+//SPECIFICATION: Program prints out a calendar of the specified month and year that the user inputs
 //FOR: CSE 110 - Lab #8
-//TIME SPENT: 
+//TIME SPENT: 30 Minutes
 //-----------------------------------------------------------*/
 
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Lab8
-{
-    public static void main(String[] args)
-    {
+public class Lab8 {
+    public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
 
         /* Ask the user for month/year */
@@ -27,10 +25,50 @@ public class Lab8
         String[][] calendar = null;
 
         // >>>>> YOUR CODE HERE <<<<<
+        int dashes, row;
+
+        switch (weekDay){
+            case 1:
+                dashes = 0;
+                break;
+            case 2:
+                dashes = 1;
+                break;
+            case 3:
+                dashes = 2;
+                break;
+            case 4:
+                dashes = 3;
+                break;
+            case 5:
+                dashes = 4;
+                break;
+            case 6:
+                dashes = 5;
+                break;
+            case 7:
+                dashes = 6;
+                break;
+            default:
+                dashes = 0;
+                break;
+        }
+
+        if (dashes + numOfDays > 35){
+            calendar = new String[6][7];
+            row = 6;
+        }
+        else {
+            calendar = new String[5][7];
+            row = 5;
+        }
 
         /* Initialize the content of calendar by "-" */
 
         // >>>>> YOUR CODE HERE <<<<<
+        for (int i = 0; i < dashes; i++){
+            calendar[0][i] = "-";
+        }
 
         /*
          * Fill in the 2D array by the calendar in November 2020 You need to align
@@ -39,6 +77,20 @@ public class Lab8
          */
 
         // >>>>> YOUR CODE HERE <<<<<
+        int dayNumber = 1;
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < 7; j++){
+                if (calendar[i][j] == null){
+                    if (dayNumber <= numOfDays){
+                        calendar[i][j] = Integer.toString(dayNumber);
+                        dayNumber++;
+                    }
+                    else {
+                        calendar[i][j] = "-";
+                    }
+                }
+            }
+        }
 
         /**
          * Print out the calendar
@@ -47,10 +99,8 @@ public class Lab8
         System.out.printf("     The Calendar for %2d/%4d\n", month, year);
         System.out.printf("-----------------------------\n");
         System.out.printf("  Su  Mo  Tu  We  Th  Fr  Sa\n");
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < 7; j++){
                 System.out.printf("%4s", calendar[i][j]);
             }
             System.out.println();
@@ -66,8 +116,7 @@ public class Lab8
      * @param date
      * @return the weekday of date in integer (1 is Sunday, 7 is Saturday)
      */
-    private static int getWeekDayOf(int month, int day, int year)
-    {
+    private static int getWeekDayOf(int month, int day, int year){
         LocalDate date = LocalDate.of(year, month, day); // ISO
         int val = date.getDayOfWeek().getValue() + 1;
         return val == 8 ? val - 7 : val;
@@ -80,8 +129,7 @@ public class Lab8
      * @param year
      * @return the length of month in year
      */
-    private static int getNumOfDays(int month, int year)
-    {
+    private static int getNumOfDays(int month, int year){
         return LocalDate.of(year, month, 1).lengthOfMonth();
     }
 }
