@@ -27,6 +27,8 @@ public class Lab8 {
         // >>>>> YOUR CODE HERE <<<<<
         int dashes, row;
 
+        // Determines the number of dashes needed to initialize the calendar based on
+        // what week day the month starts on
         switch (weekDay){
             case 1:
                 dashes = 0;
@@ -54,10 +56,14 @@ public class Lab8 {
                 break;
         }
 
+        // If the number of days plus the number of dashes is greater than 35
+        // then initialize the array with 6 rows
         if (dashes + numOfDays > 35){
             calendar = new String[6][7];
             row = 6;
         }
+
+        // Otherwise initialize the array with 5 rows
         else {
             calendar = new String[5][7];
             row = 5;
@@ -77,14 +83,20 @@ public class Lab8 {
          */
 
         // >>>>> YOUR CODE HERE <<<<<
+        // Keeps track of the day number
         int dayNumber = 1;
+
         for (int i = 0; i < row; i++){
             for (int j = 0; j < 7; j++){
+                // Since part of the array may already be initialized by "-"
+                // Start initializing the array at the point where it has not yet been initialized
                 if (calendar[i][j] == null){
+                    // Will only fill in day numbers up until the number of days in that month
                     if (dayNumber <= numOfDays){
                         calendar[i][j] = Integer.toString(dayNumber);
                         dayNumber++;
                     }
+                    // Will fill remaining array slots with "-"
                     else {
                         calendar[i][j] = "-";
                     }
