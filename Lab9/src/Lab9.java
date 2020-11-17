@@ -1,9 +1,9 @@
 /*-------------------------------------------------------------
-//AUTHOR: your name.
-//FILENAME: title of the source file.
+//AUTHOR: Teodoro Salgado
+//FILENAME: Lab9.java
 //SPECIFICATION: your own description of the program.
 //FOR: CSE 110 - Lab #9
-//TIME SPENT: how long it took you to complete the assignment.
+//TIME SPENT: 20 Minutes
 //-----------------------------------------------------------*/
 
 public class Lab9 {
