@@ -1,7 +1,7 @@
 /*-------------------------------------------------------------
 //AUTHOR: Teodoro Salgado
 //FILENAME: Lab9.java
-//SPECIFICATION: your own description of the program.
+//SPECIFICATION: Practice using getters and setters in a class
 //FOR: CSE 110 - Lab #9
 //TIME SPENT: 20 Minutes
 //-----------------------------------------------------------*/
